@@ -21,7 +21,7 @@ tetra = tetraGetOneRingTetra(tetra);
 % while there are edge splits to be done ... 
 while n > 0
     
-    % find edge longest edge
+    % find longest edge
     [~, e1] = max(lengths);
     v1 = E(1, e1);
     v2 = E(2, e1);
