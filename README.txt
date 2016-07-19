@@ -1,5 +1,5 @@
 Matlab Tetra Mesh Toolbox
-version 0.21
+version 0.22
 
 Patricio Simari
 July 13, 2016
@@ -11,6 +11,10 @@ For documentation on each function, use the "help" or "doc" command in the Matla
 Example: doc tetraLoad
 
 Version History
+
+* 0.22: July 19, 2016
+
+tetraSubdivide
 
 * 0.21: July 13, 2016
 
