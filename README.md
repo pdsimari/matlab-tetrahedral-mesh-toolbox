@@ -1,4 +1,4 @@
-#Matlab Tetrahedral Mesh Toolbox v0.21
+#Matlab Tetrahedral Mesh Toolbox v0.22
 
 **Patricio Simari**  
 July 13, 2016  
@@ -15,6 +15,9 @@ For documentation on each function, use the `help` or `doc` command in the Matla
 `>> doc tetraLoad`
 
 ##Version History
+
+* 0.22: July 19, 2016. Added functions:     
+  - tetraSubdivide
 
 * 0.21: July 13, 2016. Added functions:     
   - tetraLoadRaw  
