@@ -1,8 +1,8 @@
 function [tetra, seg_tetra, seg_verts] = tetraMakeSeg(fstring, res, r, jitter)
 
 % Patricio Simari
-% First: February 22, 2016
-% Last Edited May 6, 2016
+% Created: February 22, 2016
+% Last Edited: Sep 15, 2016
 %
 % [tetra, seg_gt] = tetraMakeSeg(fstring, res, r, jitter)
 %
@@ -24,7 +24,7 @@ function [tetra, seg_tetra, seg_verts] = tetraMakeSeg(fstring, res, r, jitter)
 %
 % Example:
 % 
-% [tetra, seg_gt] = tetraMakeSeg('x^2 + y^2 + z^2 <= 1', 10, -1.5, 1.5, 0.1);
+% [tetra, seg_gt] = tetraMakeSeg('x^2 + y^2 + z^2 <= 1', 10, 1.5, 0.1);
 
 xvals = linspace(-r, r, res);
 tetra = tetraJitteredGridComplexExplicitFunction(fstring, xvals, xvals, xvals, jitter);

@@ -1,7 +1,7 @@
 function tetraExport(tetra, file)
 
 % Patricio Simari
-% July 2013
+% Created July 2013
 %
 % tetraExport(tetra, file)
 %
@@ -12,11 +12,21 @@ function tetraExport(tetra, file)
 %
 % See also tetraLoad.
 
+nd = size(tetra.V, 1);
+if (nd < 3) || (nd > 4)
+    error(['Only 3D and 4D vertices are supported. Encountered ', ...
+           'dimensionality of n == %d.'], nd);
+end
+
 if strcmpi(file(end-2:end),'.ts')
     
     fid = fopen(file, 'w');
     fprintf(fid, '%d %d\n', size(tetra.V,2), size(tetra.T,2));
-    fprintf(fid, '%f %f %f %f\n', tetra.V);
+    if nd == 3
+        fprintf(fid, '%f %f %f\n', tetra.V);
+    else
+        fprintf(fid, '%f %f %f %f\n', tetra.V);
+    end
     fprintf(fid, '%u %u %u %u\n', tetra.T - 1);
     fclose(fid);
     

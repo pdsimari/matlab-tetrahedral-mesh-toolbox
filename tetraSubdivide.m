@@ -21,24 +21,25 @@ tetra = tetraGetOneRingTetra(tetra);
 % while there are edge splits to be done ... 
 while n > 0
     
-    % find longest edge
+    % find longest edge e1 = (v1, v2)
     [~, e1] = max(lengths);
     v1 = E(1, e1);
     v2 = E(2, e1);
     
-    % create new vertex at mid point
+    % create new vertex m at mid point
     m = size(tetra.V, 2) + 1;
     tetra.V(:, m) = 0.5*(tetra.V(:, v1) + tetra.V(:, v2));
     tetra.t_at_v{m} = [];
     
-    % split all tetra incident on e ...
-    for t1 = tetraTetraAtEdge(tetra, v1, v2)
+    % split all tetra t1 incident on e1 ...
+    t_at_e1 = tetraTetraAtEdge(tetra, v1, v2);
+    for t1 = t_at_e1
         
-        % get two copies of tetra t
+        % get two copies of tetra t1
         T1 = tetra.T(:, t1);
         T2 = T1;
         
-        % replace v1/v2 in each by m
+        % replace v1 and v2 in each by m
         T1(T1 == v2) = m;
         T2(T2 == v1) = m;
         
